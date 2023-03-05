@@ -1,7 +1,6 @@
 from utils.stack import Stack
 from utils.node import Node
 
-
 def main():
     print("Добавление")
     n1 = Node(5, None)
@@ -37,23 +36,6 @@ def main():
     stack1.push('data4')
     stack1.push('data5')
     stack1.push('data6')
-
-    print(stack1.elements)
-    data = stack1.pop()
-
-    print(stack1.elements)
-    data = stack1.pop()
-
-    print(stack1.elements)
-    data = stack1.pop()
-
-    print(stack1.elements)
-
-    # теперь последний элемент содержит данные data4
-    print(stack1.top.data)
-
-    # данные удаленного элемента
-    print(data)
 
 
 if __name__ == "__main__":

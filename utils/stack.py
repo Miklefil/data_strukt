@@ -18,34 +18,17 @@ class Stack():
     и возвращает его данные
     метод data(self) -> object - возвращает объект data, хранящийся в узле Node
     """
-    def __init__(self) -> None:
-        """инициализация пустого стэка"""
-        self.elements = []
-        # top— последний помещенный в стек элемент
-        self.top = None
 
-    def push(self, data) -> Node:
-        """функция добавляет элемент в  стэк и возвращает его"""
-        if len(self.elements) == 0:
+    def __init__(self, top=None):
+            self.top = top
+
+    def push(self, data):
+            """Добавляет данные в стек"""
             new_node = Node(data)
-        else:
-            new_node = Node(data, self.top)
-        self.top = new_node
-        return self.elements.append(new_node)
+            new_node.next_node = self.top
+            self.top = new_node
 
-    def pop(self) -> Node:
-        """функция удаляет последний элемент из стэка
-        и возвращает его данные"""
-        if len(self.elements) == 1:
-            last_node = self.top
-            self.elements.pop()
-            self.top = None
-            return last_node.data
-        elif len(self.elements) > 1:
-            last_node = self.top
-            self.top = self.elements[len(self.elements) - 2]
-            self.elements.pop()
-            return last_node.data
-        else:
-            self.top = None
-            return None
+    def pop(self):
+            remove = self.top
+            self.top = self.top.next_node
+            return remove.data
