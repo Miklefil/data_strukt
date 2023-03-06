@@ -1,3 +1,5 @@
+import self as self
+
 from utils.node import Node
 
 
@@ -29,6 +31,8 @@ class Stack():
             self.top = new_node
 
     def pop(self):
-            remove = self.top
-            self.top = self.top.next_node
-            return remove.data
+        if self.top is None:
+            return
+        value = self.top.data
+        self.top = self.top.next_node
+        return value
