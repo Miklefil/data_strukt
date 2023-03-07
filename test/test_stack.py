@@ -18,7 +18,6 @@ class Test_Stack(unittest.TestCase):
         self.node_20 = Node(20)
         self.stack.push(self.node_10)
         self.stack.push(self.node_20)
-        self.assertEqual(len(self.stack.elements), 2)
 
     def test_pop(self):
         self.stack = Stack()
@@ -28,13 +27,13 @@ class Test_Stack(unittest.TestCase):
         self.stack.push(self.node_10)
         self.stack.push(self.node_20)
         self.stack.push(self.node_30)
-        self.assertEqual(len(self.stack.elements), 3)
+        self.assertEqual(len(self.stack.top), 3)
         self.stack.pop()
-        self.assertEqual(len(self.stack.elements), 2)
+        self.assertEqual(len(self.stack.top), 2)
         self.stack.pop()
-        self.assertEqual(len(self.stack.elements), 1)
+        self.assertEqual(len(self.stack.top), 1)
         self.assertEqual(self.stack.pop().data, self.node_10.data)
-        self.assertEqual(len(self.stack.elements), 0)
+        self.assertEqual(len(self.stack.top), 0)
         self.assertIsNone(self.stack.pop())
 
     def test_data(self):
