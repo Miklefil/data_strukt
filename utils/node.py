@@ -18,9 +18,25 @@ class Node():
         возвращает только данные data
         полное представление закомментировано для последущей реализации
         """
+        return str(self.data)
+
+
+class Queue:
+    def __init__(self, top=None, tail=None):
+        self.top = top
+        self.tail = tail
+
+    def enqueue(self, data):
+        new_node = Node(data)
+        if self.top is None:
+            self.top = new_node
+            self.tail = new_node
+        else:
+            self.tail.next_node = new_node
+            self.tail = new_node
+
         # text = ""
         # for item in self.__dict__:
         #     text += f'Node({str(item)}={self.__dict__[item]}), '
         # text[:-2]
-        return str(self.data)
         #return text
