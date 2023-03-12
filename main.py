@@ -5,12 +5,14 @@ queue = Queue()
 queue.enqueue('data1')
 queue.enqueue('data2')
 queue.enqueue('data3')
+print(queue.dequeue())
 
-print(queue.top.data)
-print(queue.top.next_node.data)
-print(queue.tail.data)
-print(queue.tail.next_node)
-print(queue.tail.next_node.data)
+print(queue.dequeue())
+
+print(queue.dequeue())
+
+print(queue.dequeue())
+
 
 
 

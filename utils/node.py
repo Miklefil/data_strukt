@@ -8,6 +8,7 @@ class Node():
     метод __repr__(self) -> str: возвращает текстовое представление объекта Node
     метод next_node(self) -> Node: возвращает указатель на следующий элемент
     """
+
     def __init__(self, data, next_node=None) -> None:
         """инициализация пустого узла"""
         self.data = data
@@ -35,8 +36,16 @@ class Queue:
             self.tail.next_node = new_node
             self.tail = new_node
 
-        # text = ""
-        # for item in self.__dict__:
-        #     text += f'Node({str(item)}={self.__dict__[item]}), '
-        # text[:-2]
-        #return text
+
+    def dequeue(self):
+        if self.top is None:
+            return
+        value = self.top.data
+        self.top = self.top.next_node
+        return value
+
+    # text = ""
+    # for item in self.__dict__:
+    #     text += f'Node({str(item)}={self.__dict__[item]}), '
+    # text[:-2]
+    # return text
